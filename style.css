@@ -24,8 +24,9 @@
         align-items: center;
     }
     
-    .imgBox {
-        display: none;
+    .imgBox img {
+        width: 0px;
+        transition: width 0.5s ease-in-out;
     }
     
     .gamecontainer {
@@ -45,11 +46,22 @@
         flex-direction: column;
     }
     
+    .info {
+        font-size: 1.5rem;
+    }
+    
     #reset {
         display: block;
         margin: 20px auto;
-        font-size: 3rem;
+        font-size: 2rem;
         padding: 1vh 5vw;
+        background-color: #fff;
+        border-radius: 7px;
+        cursor: pointer;
+    }
+    
+    #reset:hover {
+        background-color: rgb(255, 208, 216);
     }
     
     .container {
@@ -57,6 +69,7 @@
         grid-template-columns: repeat(3, 10vw);
         grid-template-rows: repeat(3, 10vw);
         margin: auto;
+        position: relative;
     }
     
     .box {
@@ -76,10 +89,18 @@
         padding: 10px;
     }
     
+    .line {
+        background-color: rgb(123, 3, 23);
+        height: 5px;
+        position: absolute;
+        transition: width 1s ease-in-out;
+        width: 0vw;
+    }
+    
     @media only screen and (max-width: 1000px) {
         .gamecontainer {
             width: 80%;
-            height: 50vh;
+            height: 40vh;
         }
     }
     
